@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up - E-Library</title>
+    <style>
+       
+* {
+    
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+     background-image: url("WhatsApp Image 2023-10-26 at 22.43.22_9397f092.jpg");background-size:100%; background-repeat:no-repeat; 
+}
+
+header {
+    
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+
+.signup-form {
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #0078d4;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+}
+
+p {
+    margin-top: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create an Account</h1>
+    </header>
+
+    <section class="signup-form">
+        <form action="process-signup.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <button type="submit"><a style="text-decoration: none; color: white;" href="homelib.html"> Sign Up</a></button>
+        </form>
+        <p>Already have an account? <a href="login.html">Log in here</a></p>
+    </section>
+</body>
+</html>
