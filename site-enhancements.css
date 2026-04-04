@@ -1,0 +1,297 @@
+/* Shared responsive and search improvements while preserving existing page styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.elib-search-cell {
+  position: relative;
+}
+
+.elib-search-label {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.elib-search-suggestions {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  width: min(420px, 100%);
+  max-height: 240px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+}
+
+.elib-search-suggestions button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.elib-search-suggestions button:hover {
+  background: #f4f4f4;
+}
+
+[data-elib-clear-cart-btn] {
+  padding: 8px 14px;
+  border: 1px solid #a9a9a9;
+  border-radius: 8px;
+  background: #efefef;
+  cursor: pointer;
+}
+
+[data-elib-clear-cart-btn]:hover {
+  background: #e4e4e4;
+}
+
+@media (max-width: 992px) {
+  [style*="width: 1500px"],
+  [style*="width:1500px"],
+  [style*="width: 1520px"],
+  [style*="width:1520px"],
+  [style*="width: 1540px"],
+  [style*="width:1540px"] {
+    width: 100% !important;
+  }
+
+  [style*="margin-left: 250px"],
+  [style*="margin-left:250px"],
+  [style*="margin-left: 450px"],
+  [style*="margin-left:450px"],
+  [style*="margin-left: 550px"],
+  [style*="margin-left:550px"] {
+    margin-left: 0 !important;
+  }
+
+  [style*="height:500px"],
+  [style*="height: 500px"],
+  [style*="height:400px"],
+  [style*="height: 400px"] {
+    height: auto !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body {
+    background-size: cover !important;
+  }
+
+  table {
+    max-width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    max-width: 100%;
+  }
+
+  .elib-search-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .elib-search-input {
+    width: min(360px, 100%);
+    min-width: 200px;
+    padding: 10px 12px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  .elib-search-input:focus {
+    border-color: #6f6f6f;
+    box-shadow: 0 0 0 2px rgba(69, 69, 69, 0.12);
+  }
+
+  .elib-search-btn {
+    padding: 9px 16px;
+    border: 1px solid #b6b6b6;
+    border-radius: 10px;
+    background: #efefef;
+    cursor: pointer;
+  }
+
+  .elib-search-btn:hover {
+    background: #e6e6e6;
+  }
+
+  h1 {
+    font-size: 28px !important;
+    margin-left: 0 !important;
+  }
+
+  th,
+  td {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  .elib-search-cell {
+    gap: 8px;
+  }
+
+  .elib-search-label {
+    width: 100%;
+  }
+
+  .elib-search-input,
+  .elib-search-btn {
+    width: 100%;
+  }
+
+  body > div[style*="display: flex"][style*="width: 1500px"],
+  body > div[style*="display:flex"][style*="width:1500px"] {
+    display: block !important;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  body > div[style*="display: flex"] img,
+  body > div[style*="display:flex"] img {
+    display: block;
+    margin: 10px auto !important;
+  }
+
+  th[style*="width: 100px"],
+  th[style*="width:100px"] {
+    width: auto !important;
+  }
+
+  .elib-page-homelib-html table {
+    min-width: 100% !important;
+  }
+
+  .elib-page-homelib-html td,
+  .elib-page-homelib-html th {
+    font-size: 14px;
+  }
+
+  .elib-page-homelib-html td img,
+  .elib-page-homelib-html th img {
+    width: 110px !important;
+    height: auto !important;
+    margin: 8px !important;
+  }
+
+  .elib-page-profile-html .t2 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .elib-page-profile-html .t2 table {
+    width: 100% !important;
+    margin-left: 0 !important;
+    height: auto !important;
+  }
+
+  .elib-page-profile-html .t2 > tbody > tr,
+  .elib-page-profile-html .t2 > tr {
+    display: block;
+  }
+
+  .elib-page-profile-html .t2 > tbody > tr > th,
+  .elib-page-profile-html .t2 > tr > th {
+    display: block;
+    width: 100% !important;
+  }
+
+  .elib-page-cart-html table,
+  .elib-page-weeklyissues-html table,
+  .elib-page-libdues-html table {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 24px !important;
+  }
+
+  .elib-page-homelib-html td img,
+  .elib-page-homelib-html th img {
+    width: 96px !important;
+  }
+
+  .elib-search-suggestions {
+    width: 100%;
+  }
+}
+
+/* Improve readability on book detail/sample pages that use table-based layouts */
+@media (max-width: 768px) {
+  table[align="left"],
+  table[align="center"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  table[align="left"] tr,
+  table[align="left"] td,
+  table[align="left"] th,
+  table[align="center"] tr,
+  table[align="center"] td,
+  table[align="center"] th {
+    display: block;
+    width: 100% !important;
+  }
+
+  table[align="left"] img,
+  table[align="center"] img {
+    width: min(100%, 360px) !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto 12px !important;
+    padding-right: 0 !important;
+  }
+
+  table[align="left"] b,
+  table[align="center"] b {
+    font-size: clamp(28px, 7vw, 38px) !important;
+    line-height: 1.2;
+  }
+
+  table[align="left"] i,
+  table[align="left"] td,
+  table[align="center"] i,
+  table[align="center"] td {
+    font-size: 16px !important;
+    line-height: 1.55;
+  }
+
+  table[align="left"] input,
+  table[align="center"] input {
+    width: min(100%, 300px) !important;
+    height: 42px;
+  }
+}
